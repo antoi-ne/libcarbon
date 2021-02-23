@@ -6,7 +6,7 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/14 18:53:40 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/01/14 19:13:45 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/02/23 13:53:10 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@
 size_t	str_len(char *s);
 
 /*
-** char *str_cpy(char *s)
+** char *str_cpy(char *d, char *s)
 **
-** DESCRIPTION:
-** RETURN VALUE:
+** DESCRIPTION: str_cpy() copies the string s into the string d.
+** RETURN VALUE: str_cpy() returns d.
 */
 char	*str_cpy(char *d, char *s);
 
