@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fmt_fprint.c                                       :+:      :+:    :+:   */
+/*   str_ncpy.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/06 16:23:35 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/02/24 13:57:09 by ancoulon         ###   ########.fr       */
+/*   Created: 2021/02/23 19:14:36 by ancoulon          #+#    #+#             */
+/*   Updated: 2021/02/24 14:07:53 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "carbon/fmt.h"
-
 #include "carbon/str.h"
 
-#include <unistd.h>
-
-ssize_t
-	fmt_fprint(int fd, char *str)
+char*
+	str_ncpy(char *d, char *s, size_t len)
 {
-	return (write(fd, str, str_len(str)));
+	size_t	i;
+
+	if (d && s)
+	{
+		i = 0;
+		while (s[i] && i < (len - 1))
+		{
+			d[i] = s[i];
+			i++;
+		}
+		d[i] = '\0';
+	}
+	return (d);
 }

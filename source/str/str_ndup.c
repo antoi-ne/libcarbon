@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fmt_fprint.c                                       :+:      :+:    :+:   */
+/*   str_ndup.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/06 16:23:35 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/02/24 13:57:09 by ancoulon         ###   ########.fr       */
+/*   Created: 2021/02/23 19:09:46 by ancoulon          #+#    #+#             */
+/*   Updated: 2021/02/23 19:42:32 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "carbon/fmt.h"
-
 #include "carbon/str.h"
 
-#include <unistd.h>
+#include "carbon/mem.h"
 
-ssize_t
-	fmt_fprint(int fd, char *str)
+char*
+	str_ndup(char *s, size_t len)
 {
-	return (write(fd, str, str_len(str)));
+	char	*dup;
+	size_t	max_len;
+
+	max_len = str_len(s);
+	if (len < max_len)
+		max_len = len;
+	dup = mem_calloc(max_len);
+	str_ncpy(dup, s, len + 1);
+	return (dup);
 }
