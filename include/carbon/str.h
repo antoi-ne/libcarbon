@@ -6,7 +6,7 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/14 18:53:40 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/02/23 19:47:30 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/02/24 15:22:30 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ char	*str_cpy(char *d, char *s);
 
 char	*str_ncpy(char *d, char *s, size_t len);
 
+char	*str_cat(char *d, char *s);
+
 /*
 ** char *str_dup(char *s)
 **
@@ -43,6 +45,10 @@ char	*str_ncpy(char *d, char *s, size_t len);
 char	*str_dup(char *s);
 
 char	*str_ndup(char *s, size_t len);
+
+char	*str_sub(char *s, unsigned int start, size_t len);
+
+char	*str_join(char *s1, char *s2);
 
 char	**str_split(char *s, char c);
 
