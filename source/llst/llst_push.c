@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   llst_new.c                                         :+:      :+:    :+:   */
+/*   llst_push.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/14 19:38:06 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/02/25 11:32:07 by ancoulon         ###   ########.fr       */
+/*   Created: 2021/02/25 11:30:20 by ancoulon          #+#    #+#             */
+/*   Updated: 2021/02/25 11:43:58 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "carbon/llst.h"
 
-#include "carbon/mem.h"
-
-t_llst*
-	llst_new(void *data)
+void
+	llst_push(t_llst **lst, t_llst *node)
 {
-	t_llst	*node;
-
-	node = mem_setalloc(sizeof(t_llst), 0);
-	if (node)
-		node->data = data;
-	return (node);
+	if (!lst)
+		return (NULL);
+	if (!*lst)
+		*lst = node;
+	else
+		llst_tail(*lst)->next = node;
 }

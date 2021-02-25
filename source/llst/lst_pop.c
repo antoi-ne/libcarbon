@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   llst_new.c                                         :+:      :+:    :+:   */
+/*   lst_pop.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/14 19:38:06 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/02/25 11:32:07 by ancoulon         ###   ########.fr       */
+/*   Created: 2021/02/25 11:54:23 by ancoulon          #+#    #+#             */
+/*   Updated: 2021/02/25 12:02:26 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "carbon/llst.h"
 
-#include "carbon/mem.h"
-
 t_llst*
-	llst_new(void *data)
+	llst_pop(t_llst **lst)
 {
-	t_llst	*node;
-
-	node = mem_setalloc(sizeof(t_llst), 0);
-	if (node)
-		node->data = data;
-	return (node);
+	t_llst	*tail;
+	
+	if (!lst || !*lst)
+		return (NULL);
+	while (*lst && (*lst)->next)
+		*lst = (*lst)->next;
+	tail = (*lst)->next;
+	(*lst)->next = NULL;
+	return (tail);
 }
