@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   llst_push.c                                        :+:      :+:    :+:   */
+/*   llst_destroy.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/25 11:30:20 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/02/25 12:12:45 by ancoulon         ###   ########.fr       */
+/*   Created: 2021/02/25 12:12:18 by ancoulon          #+#    #+#             */
+/*   Updated: 2021/02/25 12:16:10 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "carbon/llst.h"
 
+#include <stdlib.h>
+
 void
-	llst_push(t_llst **lst, t_llst *node)
+	llst_destroy(t_llst *node, void (*del)(void *))
 {
-	if (!lst)
-		return ;
-	if (!*lst)
-		*lst = node;
-	else
-		llst_tail(*lst)->next = node;
+	if (node)
+	{
+		if (del)
+			del(node->data);
+		free(node);
+	}
 }
