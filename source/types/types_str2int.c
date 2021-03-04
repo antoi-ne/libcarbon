@@ -1,22 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   carbon.h                                           :+:      :+:    :+:   */
+/*   types_str2int.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/14 13:41:06 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/03/04 10:50:36 by ancoulon         ###   ########.fr       */
+/*   Created: 2021/03/04 10:48:29 by ancoulon          #+#    #+#             */
+/*   Updated: 2021/03/04 10:53:47 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CARBON_H
-#define CARBON_H
-
-#include "carbon/mem.h"
-#include "carbon/str.h"
-#include "carbon/llst.h"
-#include "carbon/fmt.h"
 #include "carbon/types.h"
 
-#endif
+int		types_str2int(char *s)
+{
+	int				i;
+	long int		nbr;
+	int				sign;
+
+	i = 0;
+	nbr = 0;
+	sign = 1;
+	if (s[i] == '+')
+		i++;
+	else if (s[i] == '-' && s[i++])
+		sign *= -1;
+	while (s[i] && s[i] >= '0' && s[i] <= '9')
+	{
+		if (nbr < 0)
+			return (sign > 0 ? -1 : 0);
+		nbr = (nbr * 10) + (s[i] - '0');
+		i++;
+	}
+	return (sign * nbr);
+}
