@@ -6,14 +6,14 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 14:47:58 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/02/24 15:24:18 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/03/06 17:41:34 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef IO_H
 # define IO_H
 
-#define CARBON_NL_BUFFSIZE 1024
+#define BUFFER_SIZE 1024
 
 int	io_next_line(int fd, char **line);
 

@@ -6,7 +6,7 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 11:54:23 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/02/25 12:02:26 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/03/06 16:45:54 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_llst*
 	
 	if (!lst || !*lst)
 		return (NULL);
-	while (*lst && (*lst)->next)
+	while (*lst && (*lst)->next && (*lst)->next->next)
 		*lst = (*lst)->next;
 	tail = (*lst)->next;
 	(*lst)->next = NULL;
