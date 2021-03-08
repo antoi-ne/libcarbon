@@ -6,14 +6,13 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 11:19:51 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/03/02 11:27:25 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/03/08 10:31:39 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "carbon/str.h"
 
-int
-	str_cmp(char *s1, char *s2)
+int	str_cmp(char *s1, char *s2)
 {
 	size_t	i;
 

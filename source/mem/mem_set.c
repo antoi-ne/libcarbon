@@ -6,14 +6,13 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/14 13:45:21 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/02/23 15:52:56 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/03/08 10:27:37 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "carbon/mem.h"
 
-void*
-	mem_set(void *p, uint8_t c, size_t size)
+void	*mem_set(void *p, uint8_t c, size_t size)
 {
 	if (p)
 		while (size--)

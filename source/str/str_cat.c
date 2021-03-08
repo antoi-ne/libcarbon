@@ -6,14 +6,13 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 14:56:47 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/02/24 15:01:14 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/03/08 10:27:54 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "carbon/str.h"
 
-char*
-	str_cat(char *d, char *s)
+char	*str_cat(char *d, char *s)
 {
 	size_t	i;
 	size_t	len;

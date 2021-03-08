@@ -6,26 +6,24 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 18:47:43 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/02/24 14:08:10 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/03/08 10:31:05 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "carbon/str.h"
 
 #include "carbon/mem.h"
-
 #include <stdlib.h>
 #include <stdio.h>
 
-static size_t
-	token_counter(char *s, char c)
+static size_t	token_counter(char *s, char c)
 {
 	size_t	i;
 	size_t	counter;
 
 	i = 0;
 	counter = 0;
-	while(s[i])
+	while (s[i])
 	{
 		if (s[i] == c)
 		{
@@ -33,21 +31,20 @@ static size_t
 			continue ;
 		}
 		counter++;
-		while(s[i] && s[i] != c)
+		while (s[i] && s[i] != c)
 			i++;
 	}
 	return (counter);
 }
 
-char**
-	str_split_free(char **strs)
+char			**str_split_free(char **strs)
 {
 	size_t	i;
 
 	i = 0;
 	if (strs)
 	{
-		while(strs[i])
+		while (strs[i])
 		{
 			free(strs[i]);
 			i++;
@@ -57,8 +54,7 @@ char**
 	return (NULL);
 }
 
-char**
-	str_split(char *s, char c)
+char			**str_split(char *s, char c)
 {
 	char	**strs;
 	size_t	counter;
