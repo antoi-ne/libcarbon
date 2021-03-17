@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lst_pop.c                                          :+:      :+:    :+:   */
+/*   str_cmp.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/25 11:54:23 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/02/25 12:02:26 by ancoulon         ###   ########.fr       */
+/*   Created: 2021/03/02 11:19:51 by ancoulon          #+#    #+#             */
+/*   Updated: 2021/03/08 10:31:39 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "carbon/llst.h"
+#include "carbon/str.h"
 
-t_llst*
-	llst_pop(t_llst **lst)
+int	str_cmp(char *s1, char *s2)
 {
-	t_llst	*tail;
-	
-	if (!lst || !*lst)
-		return (NULL);
-	while (*lst && (*lst)->next)
-		*lst = (*lst)->next;
-	tail = (*lst)->next;
-	(*lst)->next = NULL;
-	return (tail);
+	size_t	i;
+
+	if (!s1 || !s2)
+		return (0);
+	i = 0;
+	while (s1[i] == s2[i] && s1[i])
+		i++;
+	return ((int)s1[i] - (int)s2[i]);
 }

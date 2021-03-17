@@ -6,17 +6,15 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 15:09:24 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/02/24 15:23:55 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/03/08 10:31:09 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "carbon/str.h"
 
 #include "carbon/mem.h"
 
-char*
-	str_sub(char *s, unsigned int start, size_t len)
+char	*str_sub(char *s, unsigned int start, size_t len)
 {
 	size_t	i;
 	size_t	s_len;

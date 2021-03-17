@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mem_cmp.c                                          :+:      :+:    :+:   */
+/*   llst_pop.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/14 14:05:05 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/03/08 10:27:28 by ancoulon         ###   ########.fr       */
+/*   Created: 2021/02/25 11:54:23 by ancoulon          #+#    #+#             */
+/*   Updated: 2021/03/08 10:26:32 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "carbon/mem.h"
+#include "carbon/llst.h"
+#include <stdio.h>
 
-int	mem_cmp(void *p1, void *p2, size_t n)
+t_llst	*llst_pop(t_llst **lst)
 {
-	size_t	i;
-	int		d;
+	t_llst	*node;
+	t_llst	*tail;
 
-	if (!p1 && !p2)
+	if (!lst || !*lst)
+		return (NULL);
+	node = *lst;
+	if (!node->next)
 	{
-		i = 0;
-		while (i < n)
-		{
-			d = ((uint8_t *)p1)[i] - ((uint8_t *)p2)[i];
-			if (d)
-				return (d);
-		}
+		*lst = NULL;
+		return (node);
 	}
-	return (0);
+	while (node && node->next && node->next->next)
+		node = node->next;
+	tail = node->next;
+	node->next = NULL;
+	return (tail);
 }

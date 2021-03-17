@@ -6,7 +6,7 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 19:09:46 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/02/23 19:42:32 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/03/08 10:28:25 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 #include "carbon/mem.h"
 
-char*
-	str_ndup(char *s, size_t len)
+char	*str_ndup(char *s, size_t len)
 {
 	char	*dup;
 	size_t	max_len;

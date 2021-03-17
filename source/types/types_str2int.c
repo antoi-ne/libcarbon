@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mem_cmp.c                                          :+:      :+:    :+:   */
+/*   types_str2int.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/14 14:05:05 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/03/08 10:27:28 by ancoulon         ###   ########.fr       */
+/*   Created: 2021/03/04 10:48:29 by ancoulon          #+#    #+#             */
+/*   Updated: 2021/03/04 10:53:47 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "carbon/mem.h"
+#include "carbon/types.h"
 
-int	mem_cmp(void *p1, void *p2, size_t n)
+int		types_str2int(char *s)
 {
-	size_t	i;
-	int		d;
+	int				i;
+	long int		nbr;
+	int				sign;
 
-	if (!p1 && !p2)
+	i = 0;
+	nbr = 0;
+	sign = 1;
+	if (s[i] == '+')
+		i++;
+	else if (s[i] == '-' && s[i++])
+		sign *= -1;
+	while (s[i] && s[i] >= '0' && s[i] <= '9')
 	{
-		i = 0;
-		while (i < n)
-		{
-			d = ((uint8_t *)p1)[i] - ((uint8_t *)p2)[i];
-			if (d)
-				return (d);
-		}
+		if (nbr < 0)
+			return (sign > 0 ? -1 : 0);
+		nbr = (nbr * 10) + (s[i] - '0');
+		i++;
 	}
-	return (0);
+	return (sign * nbr);
 }

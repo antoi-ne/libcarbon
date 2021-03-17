@@ -6,7 +6,7 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 14:55:51 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/02/24 15:22:21 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/03/08 10:28:12 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 #include "carbon/mem.h"
 
-char*
-	str_join(char *s1, char *s2)
+char	*str_join(char *s1, char *s2)
 {
 	char	*str;
 	size_t	len;
