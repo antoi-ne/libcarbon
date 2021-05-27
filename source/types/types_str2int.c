@@ -6,13 +6,13 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 10:48:29 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/03/04 10:53:47 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/05/27 12:33:31 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "carbon/types.h"
 
-int		types_str2int(char *s)
+int	types_str2int(char *s)
 {
 	int				i;
 	long int		nbr;
@@ -28,7 +28,11 @@ int		types_str2int(char *s)
 	while (s[i] && s[i] >= '0' && s[i] <= '9')
 	{
 		if (nbr < 0)
-			return (sign > 0 ? -1 : 0);
+		{
+			if (sign > 0)
+				return (-1);
+			return (0);
+		}
 		nbr = (nbr * 10) + (s[i] - '0');
 		i++;
 	}

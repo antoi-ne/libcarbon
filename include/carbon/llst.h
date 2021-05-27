@@ -6,7 +6,7 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/14 19:33:09 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/03/17 15:34:35 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/05/27 12:31:54 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stddef.h>
 # include <stdint.h>
 
-typedef struct	s_llst
+typedef struct s_llst
 {
 	void			*data;
 	struct s_llst	*next;

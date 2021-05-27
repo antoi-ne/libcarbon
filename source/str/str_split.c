@@ -6,7 +6,7 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 18:47:43 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/03/08 10:31:05 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/05/27 12:32:07 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static size_t	token_counter(char *s, char c)
 	return (counter);
 }
 
-char			**str_split_free(char **strs)
+char	**str_split_free(char **strs)
 {
 	size_t	i;
 
@@ -54,7 +54,7 @@ char			**str_split_free(char **strs)
 	return (NULL);
 }
 
-char			**str_split(char *s, char c)
+char	**str_split(char *s, char c)
 {
 	char	**strs;
 	size_t	counter;
