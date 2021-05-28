@@ -6,7 +6,7 @@
 #    By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/14 13:34:53 by ancoulon          #+#    #+#              #
-#    Updated: 2021/03/17 15:50:32 by ancoulon         ###   ########.fr        #
+#    Updated: 2021/05/28 13:54:29 by ancoulon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ SRCS		= \
 				source/fmt/fmt_print.c \
 				source/fmt/fmt_println.c \
 				source/io/io_next_line.c \
+				source/io/io_next_line_utils.c \
 				source/llst/llst_destroy.c \
 				source/llst/llst_destroyl.c \
 				source/llst/llst_len.c \
